@@ -1,0 +1,70 @@
+@import "./normalize.css";
+/*获取根元素html*/
+/*变量 通过var引用*/
+:root {
+    --color-text: #666;
+    --color-high-text: #ff5777;
+    --color-tint: #ff8198;
+    --color-background: #fff;
+    --font-size: 14px;
+    --line-height: 1.5;
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,"PingFang sc","Hiragiao Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    user-select: none;/*禁止用户鼠标在页面上选中文字图片等*/
+    -webkit-tap-highlight-color: transparent;
+    background: var(--color-background);
+    color: var(--color-text);
+    width: 100vm;
+}
+a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+.clear-fix::after {
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.clear-fix {
+    zoom: 1;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../../assets/img/font/iconfont.eot');
+  src: url('../../assets/img/font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../../assets/img/font/iconfont.woff2') format('woff2'),
+  url('../../assets/img/font/iconfont.woff') format('woff'),
+  url('../../assets/img/font/iconfont.ttf') format('truetype'),
+  url('../../assets/img/font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
