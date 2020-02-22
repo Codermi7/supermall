@@ -51,7 +51,7 @@
             isShowBackTop: false,
             taboffsetTop: 0,
             isTabFixed: false,
-            saveY: 0,
+            
           }
       },
       mixins:[itemListenerMixin,backTopMixin],
@@ -72,16 +72,8 @@
         this.getHomeGoods('sell')
 
       },
+      updated() {this.$refs.scroll.refresh();},
       mounted() {
-      },
-      activated() {
-          this.$refs.scroll.scrollTo(0, this.saveY, 0);
-          this.$refs.scroll.refresh()
-      },
-      deactivated() {
-        this.saveY = this.$refs.scroll.getScrollY()
-        //取消全局监听
-        this.$bus.$off('itemImageLoad',this.itemImgListener)
       },
       methods: {
           tabClick(index) {
@@ -139,21 +131,23 @@
 
 <style scoped>
   #home {
-    padding-top: 44px;
+    /* padding-top: 44px; */
     height: 100vh;
   }
   .home-nav {
     background-color: var(--color-tint);
     color: #fff;
-    position: fixed;
+    /* position: fixed;
     left: 0;
     right: 0;
     top: 0;
-    z-index: 9;
+    z-index: 9; */
   }
   .tab-control {
     /*移动端可用，有些浏览器不适用*/
     position: relative;
+    height: 45px;
+    top: -1px
   }
   .content {
     overflow: hidden;

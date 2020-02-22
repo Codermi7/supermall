@@ -74,8 +74,10 @@
     height: 40px;
     background-color: #fff;
     line-height: 40px;
-    position: relative;
+    position: fixed;
+    bottom: 58px;
     display: flex;
+    width: 100%
   }
   .check-content {
     display: flex;
@@ -87,6 +89,7 @@
     height: 23px;
     width: 23px;
     line-height: 23px;
+    /* touch-action: none; */
   }
   .total-price {
     margin-left: 20px;

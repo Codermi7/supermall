@@ -1,7 +1,7 @@
 <template>
   <div class="cart-list-item">
     <div class="item-selector">
-      <check-button @click.native="checkClick" :is-checked="product.checked" ></check-button>
+      <check-button @click.native.passive="checkClick" :is-checked="product.checked" class="touch" ></check-button>
     </div>
     <div class="item-img">
       <img :src="product.image">
@@ -20,6 +20,7 @@
 
 <script>
   import CheckButton from "../../../components/content/checkButton/CheckButton";
+  
     export default {
       name: "CartListItem",
       props: {
@@ -30,12 +31,18 @@
           }
         }
       },
+      data() {
+        return {
+          
+        }
+      },
       components: {
         CheckButton
       },
       methods: {
         checkClick() {
-          this.product.checked = !this.product.checked
+            this.product.checked = !this.product.checked;
+            console.log(this)
         }
       }
     }
@@ -52,7 +59,7 @@
   .item-selector {
     display: flex;
     align-items: center;
-    padding: 0 2px;
+    padding: 0 5px;
   }
   .item-img img {
     width: 80px;
@@ -89,5 +96,8 @@
   }
   .info-bottom .item-price {
     color: orangered;
+  }
+  .touch {
+    touch-action: none;
   }
 </style>

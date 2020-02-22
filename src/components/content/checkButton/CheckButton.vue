@@ -21,6 +21,7 @@
     padding: 1px;
     border-radius: 50%;
     border: 2px solid #aaa;
+    touch-action: none;
   }
   .check {
     background-color: var(--color-tint);
